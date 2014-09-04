@@ -625,6 +625,7 @@ typedef struct _monochromePixel
 	[mainWindow setTitle:NSLocalizedString (@"Books - Loading...", nil)];
 
 	[bookArrayController addObserver:self forKeyPath:@"arrangedObjects" options:NSKeyValueObservingOptionNew context:NULL];
+	[bookArrayController addObserver:self forKeyPath:@"selectedObjects" options:NSKeyValueObservingOptionNew context:NULL];
 
 	if ([[NSUserDefaults standardUserDefaults] boolForKey:@"Show Gallery"])
 	{
