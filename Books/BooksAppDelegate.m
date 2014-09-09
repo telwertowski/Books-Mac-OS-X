@@ -713,7 +713,7 @@ typedef struct _monochromePixel
 	WebFrame * mainFrame = [detailsPane mainFrame];
 
 	NSArray * selectedObjects = [bookArrayController selectedObjects];
-	NSURL * localhost = [NSURL URLWithString:@"http://localhost/"];
+	NSURL * baseURL = [NSURL URLWithString:@""];
 	
 	if (pageBuilder == nil)
 		pageBuilder = [[HtmlPageBuilder alloc] init];
@@ -748,7 +748,7 @@ typedef struct _monochromePixel
 	else if ([selectedObjects count] > 1)
 		htmlString = [pageBuilder buildPageForArray:selectedObjects];
 
-	[mainFrame loadHTMLString:htmlString baseURL:localhost];
+	[mainFrame loadHTMLString:htmlString baseURL:baseURL];
 }
 
 
